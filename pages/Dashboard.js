@@ -38,7 +38,7 @@ export default function Dashboard() {
   const handleSubmit = (event) => {
     event.preventDefault();
     createGame();
-
+    handleInputChanges();
   }
 
   const handleInputChanges = (event) => {
@@ -54,6 +54,30 @@ export default function Dashboard() {
       <Text >Dashboard</Text>
       <Heading></Heading>
       <ListContainer/>
+      <TextInput
+        style={{height: 40}}
+        placeholder="Change Name"
+        onChangeText={newText => setText(newText)}
+        defaultValue={text}
+      />
+      <TextInput
+        style={{height: 40}}
+        placeholder="Change Genre"
+        onChangeText={newText => setText(newText)}
+        defaultValue={text}
+      />
+      <TextInput
+        style={{height: 40}}
+        placeholder="Change Dev Company"
+        onChangeText={newText => setText(newText)}
+        defaultValue={text}
+      />
+        <Button
+          onPress={handleSubmit()}
+          title="Submit"
+          color="#841584"
+          accessibilityLabel="Submit"
+        />
       <StatusBar style="auto" />
     </SafeAreaView>
   );

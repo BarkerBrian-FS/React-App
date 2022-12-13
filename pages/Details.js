@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import {SafeAreaView, StyleSheet, Text, View } from 'react-native';
-
 import Heading from '../components/Heading';
 import ListContainer from '../components/ListContainer';
 
@@ -97,6 +96,36 @@ export default function Details() {
       <Text >Details</Text>
       <Heading></Heading>
       <ListContainer/>
+      <TextInput
+        style={{height: 40}}
+        placeholder="Add Name"
+        onChangeText={handleInputChanges()}
+        defaultValue={text}
+      />
+      <TextInput
+        style={{height: 40}}
+        placeholder="Add The Genre"
+        onChangeText={handleInputChanges()}
+        defaultValue={text}
+      />
+      <TextInput
+        style={{height: 40}}
+        placeholder="Add Dev Company"
+        onChangeText={handleInputChanges()}
+        defaultValue={text}
+      />
+      <Button
+        onPress={handleSubmit()}
+        title="Submit"
+        color="#841584"
+        accessibilityLabel="Submit Game"
+      />
+      <Button
+        onPress={deleteGame()}
+        title="Delete Game"
+        color="#841584"
+        accessibilityLabel="Delete Game"
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
